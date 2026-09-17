@@ -12,6 +12,8 @@ import ItemDetails from "./pages/ItemDetails";
 import EditItem from "./pages/EditItem";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Matches from "./pages/Matches";
+import Chat from "./pages/Chat";
 
 const App = () => {
   return (
@@ -71,8 +73,13 @@ const App = () => {
               path="/profile"
               element={<Profile />}
             />
+            <Route
+  path="/matches"
+  element={<Matches />}
+/>
 
           </Route>
+          <Route path="/chat/:chatId" element={<Chat />} />
 
         </Route>
 
