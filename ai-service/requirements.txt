@@ -1,3 +1,6 @@
 fastapi
-uvicorn
+uvicorn[standard]
 sentence-transformers
+pillow
+pytesseract
+python-multipart

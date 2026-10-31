@@ -8,6 +8,7 @@ import pytesseract
 from io import BytesIO
 from PIL import Image, ImageOps, ImageEnhance, ImageFilter
 import torch
+import os
 
 
 app = FastAPI(
@@ -154,10 +155,16 @@ def match_items(request: MatchItemsRequest):
         "matches": matches
     }
 
-# Uncomment this line only if Tesseract isn't available through PATH.
-pytesseract.pytesseract.tesseract_cmd = (
-     r"C:\Program Files\Tesseract-OCR\tesseract.exe"
- )
+
+
+tesseract_path = os.getenv("TESSERACT_CMD")
+
+if tesseract_path:
+    pytesseract.pytesseract.tesseract_cmd = tesseract_path
+elif os.name == "nt":
+    pytesseract.pytesseract.tesseract_cmd = (
+        r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    )
 
 def extract_ocr_text(image, psm):
     data = pytesseract.image_to_data(
