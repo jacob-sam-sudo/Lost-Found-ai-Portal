@@ -36,3 +36,7 @@ Thumbs.db
 # Local uploads
 server/uploads/*
 !server/uploads/.gitkeep
+
+# Python virtual environments
+venv/
+**/venv/

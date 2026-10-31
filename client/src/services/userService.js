@@ -24,24 +24,15 @@ export const getCurrentUser = () =>
     getConfig()
   );
 
-export const uploadAvatar =
-(formData)=>{
 
-return axios.post(
+export const uploadAvatar = (avatarFile) => {
+  const formData = new FormData();
 
-`${API}/avatar`,
+  formData.append("avatar", avatarFile);
 
-formData,
-
-{
-headers:{
-Authorization:
-`Bearer ${localStorage.getItem(
-"token"
-)}`,
-},
-}
-
-);
-
+  return axios.post(`${API}/avatar`, formData, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
 };

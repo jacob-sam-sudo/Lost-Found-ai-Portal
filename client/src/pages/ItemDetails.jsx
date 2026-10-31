@@ -398,14 +398,6 @@ const ItemDetails = () => {
 
                   </div>
 
-                  {!isOwner && (
-                    <button
-                      type="button"
-                      className="hidden rounded-xl bg-indigo-50 px-4 py-2.5 text-sm font-semibold text-indigo-600 transition hover:bg-indigo-100 sm:block"
-                    >
-                      Contact
-                    </button>
-                  )}
 
                 </div>
 

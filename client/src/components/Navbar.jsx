@@ -168,6 +168,12 @@ const Navbar = () => {
   My Matches
 </NavLink>
 
+          {user?.role === "admin" && (
+  <NavLink to="/admin" className={navClass}>
+    Admin Panel
+  </NavLink>
+)}
+
           <NavLink
             to="/create-item"
             className="ml-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 hover:shadow-md"
@@ -517,6 +523,15 @@ const Navbar = () => {
 >
   My Matches
 </NavLink>
+            {user?.role === "admin" && (
+  <NavLink
+    to="/admin"
+    onClick={() => setMobileOpen(false)}
+    className={navClass}
+  >
+    Admin Panel
+  </NavLink>
+)}
 
             <NavLink
               to="/profile"

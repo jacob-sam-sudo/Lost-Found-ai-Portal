@@ -10,6 +10,8 @@ import matchRoutes from "./routes/matchRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
 import http from "http";
 import { Server } from "socket.io";
+import adminRoutes from "./routes/adminRoutes.js";
+import ownershipRoutes from "./routes/ownershipRoutes.js";
 dotenv.config();
 
 connectDB();
@@ -62,6 +64,8 @@ app.use("/api/notifications", notificationRoutes);
 app.use("/api/chats", chatRoutes);
 app.use("/api/matches", matchRoutes);
 app.use("/api/items", itemRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/ownership", ownershipRoutes);
 app.get("/", (req, res) => {
   res.send("API Running...");
 });

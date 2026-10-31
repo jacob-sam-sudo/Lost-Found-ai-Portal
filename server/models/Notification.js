@@ -32,7 +32,7 @@ const notificationSchema = new mongoose.Schema(
 
     type: {
       type: String,
-      enum: ["match"],
+      enum: ["match", "ownership_claim"],
       default: "match",
     },
 

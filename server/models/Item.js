@@ -69,6 +69,17 @@ const itemSchema = new mongoose.Schema(
       required: true,
     },
 
+        extractedText: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+
+    imageEmbedding: {
+    type: [Number],
+    default: [],
+    },
+
     aiMatches: {
       type: [aiMatchSchema],
       default: [],
